@@ -1,0 +1,49 @@
+.footer{
+  background-color: var(--darkBlue);
+  display: flex;
+  justify-content: center;
+  padding-inline: 1rem;
+}
+
+.footer .container{
+  max-width: 1160px;
+  width: 1160px;
+  padding-block: 5rem;
+}
+
+.container .title{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.container .title h1{
+  font-size: clamp(2.5em, 5vw, 3em);
+  font-weight: 800;
+  color: var(--white);
+  width: 70%;
+}
+
+.container .title svg{
+  width: 70px;
+}
+
+.container .containerSocial{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.containerSocial p{
+  color: var(--lightYellow);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+@media screen and (min-width: 760px) {
+  .container .containerSocial{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

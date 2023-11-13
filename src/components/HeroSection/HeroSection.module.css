@@ -1,0 +1,203 @@
+.section{
+  background-image: url('/assets/gradient-bg.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-start;
+  padding-inline: 1rem;
+  overflow: hidden;
+}
+
+.section .container{
+  display: flex;
+  flex-direction: column;
+  max-width: 1160px;
+}
+
+.container .heroInfo{
+  color: var(--white);
+  margin-block: 6rem;
+  width: fit-content;
+}
+
+.container .heroInfo h1{
+  color: var(--lightYellow);
+  text-transform: uppercase;
+  font-size: .9em;
+  letter-spacing: .2em;
+}
+
+.container .heroInfo h2{
+  font-size: clamp(3em, 10vw, 5em);
+  font-weight: 800;
+  margin-block: 1rem;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.container .heroInfo p{
+  line-height: 1.6em;
+  font-weight: 400;
+  font-size: clamp(1.1em, 3vw, 1.2em);
+}
+
+.heroInfo .buttonsContainer{
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+}
+
+.buttonsContainer .primaryButton,.buttonsContainer .secondaryButton{
+  border: 2px solid var(--lightYellow);
+  padding: .8rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  width: 100%;
+  transition: all .2s ease-in-out;
+}
+
+.buttonsContainer .primaryButton{
+  background-color: var(--lightYellow);
+  color: var(--darkBlue);
+}
+
+.buttonsContainer .primaryButton:hover{
+  background-color: var(--lightYellow);
+  opacity: .9;
+}
+
+.buttonsContainer .secondaryButton{
+  background-color: transparent;
+  color: var(--lightYellow);
+}
+
+.buttonsContainer .secondaryButton:hover{
+  background-color: var(--lightYellow);
+  color: var(--darkBlue);
+}
+
+.buttonsContainer img{
+  display: none;
+}
+
+.heroImage{
+  position: relative;
+  display: none;
+}
+
+.heroImage .image{
+  width: 691px;
+  max-width: 691px;
+}
+
+.heroImage .circleTop,
+.heroImage .circleBottom,
+.heroImage .sparkle,
+.heroImage .altTextBubble,
+.heroImage .contrastBubble,
+.heroImage .focusOrderBubble{
+  position: absolute;
+}
+
+.heroImage .sparkle{
+  top: 0;
+  left: 10px;
+  width: 40px;
+}
+
+.heroImage .circleTop{
+  top: 114px;
+  right: 14px;
+  width: 180px;
+  animation: rotateCircle 10s linear 0s infinite normal none;
+}
+
+.heroImage .circleBottom{
+  bottom: 80px;
+  left: 100px;
+  width: 140px;
+  animation: rotateCircle 10s linear 0s infinite reverse none;
+}
+
+.heroImage .altTextBubble{
+  bottom: 170px;
+  left: 80px;
+  width: 65px;
+  opacity: 0;
+  animation: opacityBubbles .5s linear 4s forwards;
+}
+
+.heroImage .focusOrderBubble{
+  bottom: 175px;
+  right: 12px;
+  width: 65px;
+  opacity: 0;
+  animation: opacityBubbles .5s linear 3s forwards;
+}
+
+.heroImage .contrastBubble{
+  top: 70px;
+  right: 80px;
+  width: 65px;
+  opacity: 0;
+  animation: opacityBubbles .5s linear 5s forwards;
+}
+
+/* ANIMATIONS */
+@keyframes rotateCircle {
+  from{
+    transform: rotate(0deg);
+  }
+
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes opacityBubbles {
+  from{
+    opacity: 0;
+  }
+
+  to{
+    opacity: 1;
+  }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 900px) {
+  .section{
+    height: auto;
+    padding-inline: 4rem;
+  }
+
+  .section .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+
+  .heroImage{
+    display: inline-flex;
+  }
+
+  .buttonsContainer img{
+    position: absolute;
+    display: block;
+    width: 150px;
+    right: -20px;
+    top: 0px;
+  }
+}
+
+@media screen and (min-width: 448px) {
+  .buttonsContainer .primaryButton,.buttonsContainer .secondaryButton{
+    width: fit-content;
+  }
+}

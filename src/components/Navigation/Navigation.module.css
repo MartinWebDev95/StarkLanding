@@ -1,0 +1,118 @@
+.navigation{
+  position: absolute;
+  top: 60px;
+  bottom: 0px;
+  width: 100%;
+  left: 0;
+  transform-origin: right;
+  z-index: 10;
+  background-color: var(--white);
+  overflow-y: auto;
+  transition: all .3s ease-in;
+}
+
+.navigation[aria-hidden=true]{
+  transform: scaleX(0);
+}
+
+.navigation[aria-hidden=false]{
+  transform: scaleX(1);
+}
+
+.navigation .list{
+  background-color: var(--white);
+  padding-bottom: 8rem;
+}
+
+.list .listItem {
+  border-bottom: 1px solid var(--gray);
+  margin-inline: 1.5rem;
+}
+
+.list .listItem:nth-child(2){
+  border-bottom: 0px solid ;
+}
+
+.list .listItem:nth-child(2) .listLink{
+  padding-block: 0rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.list .listItem .listLink{
+  color: var(--blue);
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: .8em;
+  letter-spacing: .1em;
+  display: block;
+  padding-block: 1.5rem;
+}
+
+.listItem .listLink .arrow{
+  display: none;
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1000px) {
+  .navigation{
+    display: block;
+    position: static;
+    height: fit-content;
+    width: auto;
+    z-index: 0;
+    overflow-y: visible;
+    background-color: transparent;
+  }
+
+  .navigation[aria-hidden=true]{
+    transform: scaleX(1);
+  }
+  
+  .navigation[aria-hidden=false]{
+    transform: scaleX(1);
+  }
+
+  .navigation .list{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: transparent;
+    padding-bottom: 0rem;
+  }
+
+  .listItem.loginMobile{
+    display: none;
+  }
+
+  .list .listItem {
+    border-bottom: 0px solid var(--gray);
+    margin-inline: 0rem;
+  }
+
+  .list .listItem .listLink:first-of-type{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+  }
+  
+  .list .listItem .listLink{
+    color: var(--white);
+    border: 2px solid transparent;
+    padding: .4rem .6rem;
+    border-radius: 10px;
+    transition: border .15s ease-in-out;
+  }
+
+  .list .listItem:nth-child(2) .listLink{
+    padding: .4rem .6rem;
+  }
+
+  .listItem .listLink .arrow{
+    display: block;
+  }
+
+  .list .listItem:hover .listLink{
+    border: 2px solid var(--white);
+  }
+}

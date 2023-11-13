@@ -1,0 +1,115 @@
+.section{
+  display: flex;
+  justify-content: center;
+  padding-inline: 1rem;
+  margin-top: 8rem;
+}
+
+.section .container{
+  max-width: 1160px;
+  width: 1160px;
+  overflow: hidden;
+}
+
+.container .title{
+  font-size: clamp(2em, 10vw, 2.5em);
+  font-weight: 800;
+  color: var(--darkBlue);
+  text-align: center;
+  line-height: 1.1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.title span:first-of-type{
+  position: relative;
+}
+
+.title span:first-of-type svg{
+  display: none;
+}
+
+.container .list{
+  margin-top: 4rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  background-color: transparent;
+  overflow-x: scroll;
+  padding-bottom: 2rem;
+}
+
+.list .listItem{
+  background-color: var(--lightGray);
+  padding: 2rem;
+  border-radius: 50px;
+  min-width: 350px;
+}
+
+.list .listItem h2{
+  text-transform: uppercase;
+  color: var(--blue);
+  font-size: 1em;
+  letter-spacing: .1em;
+  margin-bottom: 1rem;
+}
+
+.list .listItem h3{
+  color: var(--darkBlue);
+  font-size: clamp(1.5em, 10vw, 2em);
+  font-weight: 800;
+  line-height: 1.1em;
+  margin-bottom: 1rem;
+}
+
+.list .listItem p{
+  color: var(--darkBlue);
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  line-height: 1.8em;
+}
+
+.list .listItem button{
+  background-color: var(--blue);
+  border: none;
+  border-radius: 5px;
+  color: var(--white);
+  width: fit-content;
+  padding: 1rem 2rem;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+}
+
+@media screen and (min-width: 990px){
+  .container .list{
+    background-color: var(--lightGray);
+    border-radius: 50px;
+    justify-content: space-between;
+    padding: 4rem;
+    gap: 4rem;
+    overflow-x: inherit;
+  }
+
+  .list .listItem{    
+    padding: 0;
+    min-width: auto;
+  }
+
+  .title span:first-of-type svg{
+    display: block;
+    position: absolute;
+    right: -20px;
+    top: -8px;
+    z-index: -1;
+  }
+
+  .list .listItem button:hover{
+    opacity: .9;
+  }
+}
